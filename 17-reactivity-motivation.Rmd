@@ -5,21 +5,29 @@ source("_common.R")
 ```
 **CAPÍTULO EN PROCESO DE TRADUCCIÓN**
 
-## Introduction
+## Introducción
 
-The initial impression of Shiny is often that it's "magic".
-Magic is great when you get started because you can make simple apps very very quickly.
-But magic in software usually leads to disillusionment: without a solid mental model, it's extremely difficult to predict how the software will act when you venture beyond the borders of its demos and examples.
-And when things don't go the way you expect, debugging is almost impossible.
+La idea inicial de cómo funciona Shiny es que es "magia". Aunque la magia es
+de gran ayuda al principio dado que te permite crear aplicaciones de forma
+muy rápida, puede llevar a desilusión a lo largo del camino; sin un modelo mental solido,
+se puede volver difícil predecir el comportamiento del software a medida que aumenta
+la complejidad del mismo.
 
-Fortunately, Shiny is "good" magic.
-As Tom Dale said of his Ember.js JavaScript framework: "We do a lot of magic, but it's *good magic*, which means it decomposes into sane primitives." This is the quality that the Shiny team aspires to for Shiny, especially when it comes to reactive programming.
-When you peel back the layers of reactive programming, you won't find a pile of heuristics, special cases, and hacks; instead you'll find a clever, but ultimately fairly straightforward mechanism.
-Once you've formed an accurate mental model of reactivity, you'll see that there's nothing up Shiny's sleeves: the magic comes from simple concepts combined in consistent ways.
+Afortunadamente, la magia de Shiny es "buena" magia. Como dijo Tom Dale sobre
+su librería Ember.js, una librería de JavaScript para la creación de aplicaciones
+web, "Hacemos mucha magia, pero es **buena magia**, lo que significa que se
+compone de los mismos principios." Esta es la calidad que el equipo de Shiny aspira
+para Shiny, especialmente cuando se trata de programación reactiva.
+A medida que se explora la programación reactiva con más profundidad,
+encontrarás un sistema inteligente e ingenioso pero consistente y sencillo.
+Una vez se tenga un modelo mental preciso sobre la reactividad, entenderás
+que la magia se deriva de combinar conceptos de forma consistente.
 
-In this chapter, we'll motivate reactive programming by trying to do without it and then give a brief history of reactivity as it pertains to Shiny.
+En este capítulo mostraremos el poder de la programación reactiva intentando
+resolver problemas sin ella y contando una breve historia sobre la reactivadad
+en relación a Shiny.
 
-## Why do we need reactive programming? {#motivation}
+## ¿Por qué necesitamos a la programación reactiva? {#motivation}
 
 Reactive programming is a style of programming that focuses on values that change over time, and calculations and actions that depend on those values.
 Reactivity is important for Shiny apps because they're interactive: users change input controls (dragging sliders, typing in textboxes, checking checkboxes, ...) which causes logic to run on the server (reading CSVs, subsetting data, fitting models, ...) ultimately resulting in outputs updating (plots redrawing, tables updating, ...).
